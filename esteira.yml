@@ -1,0 +1,12 @@
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    name: Default
+  steps:
+  - checkout: self
+  - task: GitVersion@5
+    displayName: GitVersion
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+...
